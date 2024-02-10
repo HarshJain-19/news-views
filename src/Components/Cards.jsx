@@ -10,8 +10,7 @@ const cards = (props) => {
     const [totalPages, setTotalPages] = useState(1);
     const [currPage, setCurrPage] = useState(1);
 
-    // let apiKey = '102ab006ba894ad9bc36b42f10e468cf';
-    let apiKey = "0d2cb5e47c8e4e43b03982def9303aa4";
+    let apiKey = '102ab006ba894ad9bc36b42f10e468cf';
 
     let pageSize = 10;
     const [data, setData] = useState([]);
