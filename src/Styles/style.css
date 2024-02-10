@@ -1,0 +1,348 @@
+@import url("https://fonts.googleapis.com/css2?family=Arimo&family=Martian+Mono:wght@500&display=swap");
+:root {
+  size: 62.5%;
+  --bgc1: white;
+  --bgc2: black;
+  --tc: black;
+  --sc: rgba(0, 0, 0, 0.7);
+}
+
+.mode {
+  --bgc1: black;
+  --bgc2: #363636;
+  --tc: white;
+  --sc: rgba(255, 255, 255, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: chillax, "Arimo", sans-serif;
+  transition: all 0.4s linear;
+}
+
+body {
+  background-color: var(--bgc1);
+  transition: none;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@font-face {
+  font-family: chillax;
+  src: url(/Media/Chillax-Medium.otf);
+}
+header {
+  background-color: var(--bgc2);
+  color: white;
+  padding: 0.9rem 0.5rem;
+  width: 100%;
+  height: 3.3rem;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0.15rem 0.8rem 0.1rem var(--sc);
+}
+header h1 {
+  font-size: 1.5rem;
+  letter-spacing: 0.2rem;
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+header h1::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  background-color: white;
+  transition: all 1s;
+  transition-timing-function: cubic-bezier(0.32, 2, 0.55, 0.27);
+}
+header h1:hover::after {
+  height: 150%;
+  width: 150%;
+  opacity: 0;
+}
+header nav {
+  transition: all 0.7s ease-in-out;
+}
+header nav a, header nav select {
+  background-color: transparent;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  margin: 0.1rem 0.2rem;
+  padding: 0.2rem 0.7rem;
+  color: white;
+  outline: none;
+  border: none;
+  border-right: 1.5px solid currentColor;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  text-align: center;
+  font-size: 0.85rem;
+}
+header nav a:hover, header nav a a:active, header nav select:hover, header nav select a:active {
+  background-color: white;
+  color: black;
+  border-radius: 3rem;
+}
+header nav select > option {
+  background-color: white;
+  color: black;
+  text-align: center;
+  border-radius: 3rem;
+}
+header nav select > option:hover {
+  background: limegreen;
+}
+header .icons {
+  margin-right: 0.7rem;
+  padding: 0.5rem;
+}
+header .icons #change_mode {
+  width: 1.5rem;
+  margin-right: 0.9rem;
+  position: relative;
+  top: 0.17rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+header .icons #menu {
+  width: 1.8rem;
+  position: relative;
+  top: 0.3rem;
+  border-radius: 50%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+
+.cards {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 1.5rem 0;
+  padding: 0.5rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: baseline;
+}
+.cards .card {
+  width: 250px;
+  height: auto;
+  color: var(--tc);
+  box-shadow: 0 0 5px 2px var(--sc);
+  word-wrap: break-word;
+  word-break: break-all;
+  border: 2px solid currentColor;
+  margin: 1.7rem 0.8rem;
+}
+.cards .card:hover {
+  scale: 1.08;
+  box-shadow: 0 0 7px 3px var(--sc);
+}
+.cards .card .source {
+  margin: 1% 1% 2%;
+  font-size: 1.5rem;
+  font-weight: 900;
+  font-variant: small-caps;
+  text-align: center;
+  letter-spacing: 0.1rem;
+}
+.cards .card .source::-moz-selection {
+  background-color: var(--tc);
+  color: var(--bgc1);
+}
+.cards .card .source::selection {
+  background-color: var(--tc);
+  color: var(--bgc1);
+}
+.cards .card img {
+  width: 97%;
+  display: block;
+  margin: 1.5% auto 1%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  border: 1.5px solid currentColor;
+}
+.cards .card .title {
+  margin: 1% 1.7%;
+  font-size: 1.1rem;
+  font-weight: 900;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-align: center;
+}
+.cards .card .title::-moz-selection {
+  background-color: var(--tc);
+  color: var(--bgc1);
+}
+.cards .card .title::selection {
+  background-color: var(--tc);
+  color: var(--bgc1);
+}
+.cards .card .desc {
+  font-size: 0.85rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin: 1.25% 2.25%;
+  text-align: center;
+}
+.cards .card .desc::-moz-selection {
+  background-color: var(--tc);
+  color: var(--bgc1);
+}
+.cards .card .desc::selection {
+  background-color: var(--tc);
+  color: var(--bgc1);
+}
+.cards .card .foot {
+  margin: 5% 7%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+.cards .card .foot button {
+  width: 5rem;
+  padding: 0.09rem 0.12rem;
+  color: var(--tc);
+  background-color: var(--bgc1);
+  border: 2px solid currentColor;
+  outline: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-size: 0.7rem;
+}
+.cards .card .foot button::-moz-selection {
+  background-color: var(--tc);
+  color: var(--bgc1);
+}
+.cards .card .foot button::selection {
+  background-color: var(--tc);
+  color: var(--bgc1);
+}
+.cards .card .foot button:hover {
+  color: var(--bgc1);
+  background-color: var(--tc);
+}
+.cards .card .foot h3 {
+  font-size: 0.7rem;
+  font-style: oblique;
+  text-transform: capitalize;
+  -webkit-text-decoration: underline solid currentColor;
+          text-decoration: underline solid currentColor;
+}
+.cards .card .foot h3::-moz-selection {
+  background-color: var(--tc);
+  color: var(--bgc1);
+}
+.cards .card .foot h3::selection {
+  background-color: var(--tc);
+  color: var(--bgc1);
+}
+
+.nothing {
+  margin-top: 2.5rem;
+  font-variant: small-caps;
+  font-size: 1.5rem;
+  text-align: center;
+  color: var(--tc);
+}
+
+@media only screen and (max-width: 600px) {
+  header h1 {
+    margin: 6%;
+    font-size: 1.1rem;
+  }
+  header .nav {
+    border-top: 2px solid #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    top: 3.4rem;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: var(--bgc2);
+    color: white;
+    overflow: hidden;
+  }
+  header .nav a, header .nav select {
+    border: none;
+    border-bottom: 1.5px solid currentColor;
+    margin: 0.2rem;
+  }
+  .cards .card {
+    width: 85%;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 800px) {
+  header h1 {
+    margin: 8%;
+  }
+  header .nav {
+    border-top: 2px solid #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    top: 3.4rem;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: var(--bgc2);
+    color: white;
+    overflow: hidden;
+  }
+  header .nav a, header .nav select {
+    border: none;
+    border-bottom: 1.5px solid currentColor;
+    margin: 0.2rem;
+  }
+}
+@media only screen and (min-width: 800px) {
+  header h1 {
+    margin: 5%;
+  }
+  header .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-right: 0.7rem;
+    margin-left: auto;
+  }
+  header .icons #menu {
+    display: none;
+  }
+  .cards .card {
+    width: 400px;
+  }
+}/*# sourceMappingURL=style.css.map */

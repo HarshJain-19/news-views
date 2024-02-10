@@ -1,0 +1,16 @@
+:root {
+    size: 100%/16*10;  
+    --bgc1: white;
+    --bgc2: black;
+    --tc: black;
+    --sc: rgba(0, 0, 0, 0.7);
+}
+.mode {
+    --bgc1: black;
+    --bgc2: #363636;
+    --tc: white;
+    --sc: rgba(255, 255, 255, 0.5);
+}
+$img-size : 6.5rem;
+$tcf: white;
+ 

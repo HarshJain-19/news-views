@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo&family=Martian+Mono:wght@500&display=swap');
+@import "variable";
+@import "mixin";
+
+* {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: chillax, 'Arimo', sans-serif;
+    transition: all 0.4s linear;
+}
+body {
+    background-color: var(--bgc1);
+    transition: none;
+    scroll-behavior: smooth;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+@font-face {
+    font-family: chillax;
+    src: url(/Media/Chillax-Medium.otf);
+}
+
+//todo: header
+    //* logo, navbar, icon
+@import "header";
+
+//todo: main 
+    //* cards, card
+@import "main";
+
+//todo: media file
+@import "media";
+
+
